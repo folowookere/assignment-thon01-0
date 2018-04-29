@@ -1,39 +1,27 @@
-function carDealership() {
-  var sedan = {
+var carDealership = {
+   "sedan" : {    
          price:50,
          availability:2
-      };
-      
-     if (sedan.availability >= 1)  {
-          return "Yes, they are available"; 
-        }
-    else  {
-         "No, they aren't available";
-        } 
-/* I don't think it's getting to this part of the code at all, but I don't know why 
-I'm sure it's something small so that's why they're coming up undefined and only sedan is working*/
+      },
 
-    var suv = {
+    "suv" : {
         price:50,
         availability:0
-      };
+      },
       
-    if (suv.availability >= 1) {
-          return "Yes, they are available";
-        }
-    else  { 
-           "No, they aren't available";
-        }
-    
-    var sports = {
+    "sports" : {
         price:25,
         availability:0
-     };
+     },
      
-    if (sports.availability >= 1) {
-          return "Yes, they are available";
+     checkAvailability(typeOfCar) {
+    if (this[typeOfCar].availability > 0) {
+          return `Yes, there are  ${this[typeOfCar].availability} ${typeOfCar}'s available.`;
         }
-    else  { 
-          return "No, they aren't available";
+         return `There are no ${typeOfCar}'s available.`;
         }
-}
+
+};
+
+
+
